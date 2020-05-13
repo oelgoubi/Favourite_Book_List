@@ -69,7 +69,7 @@ class UI {
           <th scope="row">${book.author}</th>\
           <td>${book.title}</td>\
           <td>${book.isbn}</td>\
-          <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>\
+          <td><a href="#" class="btn btn-secondary btn-sm mr-1 update">update</a><a href="#" class="btn btn-danger btn-sm delete">delete</a></td>\
           `;
      
     bodyTable.appendChild(row);
@@ -80,7 +80,19 @@ class UI {
         if(el.classList.contains('delete'))
         {
             el.parentElement.parentElement.remove();
+            return true;
+        }else
+        {
+            return false;
         }
+    }
+
+    static updateBook(el){
+
+        document.getElementById('bookName').value= el.parentElement.previousElementSibling.previousElementSibling.textContent;
+        document.getElementById('author').value= el.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        document.getElementById('isbn').value= el.parentElement.previousElementSibling.textContent;
+
     }
     static showAlert(message,className)
     {  
@@ -155,12 +167,21 @@ document.querySelector('.form-book').addEventListener('submit',(e)=>{
 // target the nested elements inside the body table 
 document.querySelector('.body-table').addEventListener('click',(e)=>{
    
-    // Remove The book from The Store  ---> GET The Isbn
-    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+     // check if it delete Action
+     if(UI.deleteBook(e.target))    // Remove The book from the UI 
+     {
+          // Remove The book from The Store  ---> GET The Isbn
+          Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+           // Show a message 
+          UI.showAlert("Book was deleted",'success');
+     }else{
+        // Remove the book info from the UI before Updating it 
+         Store.removeBook(e.target.nextElementSibling.parentElement.previousElementSibling.textContent);
+         UI.deleteBook(e.target.nextElementSibling)
+         UI.updateBook(e.target);
+         
+        
+     }
 
-     // Remove The book from the UI
-     UI.deleteBook(e.target);
-
-    // Show a message 
-    UI.showAlert("Book was deleted",'success');
+  
 })
