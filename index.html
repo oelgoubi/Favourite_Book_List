@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Font AWSOME CDN-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Book Store</title>
+  </head>
+  <body>
+    <div class="container  mt-3">
+       <h1 class="display-4 text-center">
+        <i class="fas fa-book-reader text-primary mr-4"></i>Your <span class="text-primary">Book</span>List </h1>
+        <form class="form-book mt-5">
+            <div class="form-group">
+                <label for="bookName" class="ml-0 display-6" placeholder="Enter the book's name">Book Name</label>
+                <input id="bookName"  class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="author" class="ml-0 display-6" placeholder="Enter the book's author">The Author</label>
+                <input id="author"  class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="isbn" class="ml-0 display-6" placeholder="Enter the book's ISBN">ISBN</label>
+                <input id="isbn"  class="form-control" type="text">
+            </div>
+            <input type="submit" value="Add to the List" class="btn btn-primary btn-block">
+        </form>
+
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Author</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Isbn</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="body-table">
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+
+    <script src="app.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
